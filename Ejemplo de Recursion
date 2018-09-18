@@ -1,0 +1,16 @@
+fact (X) = f = 1 => x = 0
+		   f = x * fact (x - 1) = > X > 0
+
+Traduccion a Prolog:
+
+Caso Principal
+fact (X, F):-	| Es lo mismo que:
+	X = 0,		|	fact(0,1);
+	F = 1.		|
+
+Caso Recursivo
+fact(X, F):-
+	X > 0,
+	X2 is X-1,
+	fact(X2, F2),
+	F is X * F2.
